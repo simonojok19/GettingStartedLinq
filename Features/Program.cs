@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Features
 {
@@ -13,17 +14,22 @@ namespace Features
                 new Employee { Id = 2, Name = "Chris" }
             };
 
+
             IEnumerable<Employee> sales = new List<Employee>()
             {
                 new Employee { Id = 3, Name = "Alex" }
             };
 
-            IEnumerator<Employee> enumerator = developers.GetEnumerator();
-            while(enumerator.MoveNext())
+            foreach(var employee in developers.Where(NameStartsWithS))
             {
-                Console.WriteLine(enumerator.Current.Name);
+                Console.WriteLine(employee.Name);
             }
 
+        }
+
+        private static bool NameStartsWithS(Employee employee)
+        {
+            return employee.Name.StartsWith("S");
         }
     }
 }
