@@ -11,6 +11,13 @@ namespace GettingStartedLinq
         {
             string path = @"C:\windows";
             ShowLargeFilesWithoutLinq(path);
+            Console.WriteLine("***");
+            ShowLargeFilesWithLinq(path);
+        }
+
+        private static void ShowLargeFilesWithLinq(string path)
+        {
+            throw new NotImplementedException();
         }
 
         private static void ShowLargeFilesWithoutLinq(string path)
