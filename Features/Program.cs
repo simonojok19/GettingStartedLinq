@@ -8,6 +8,9 @@ namespace Features
     {
         static void Main(string[] args)
         {
+            Func<int, int> square = x => x * x;
+            Console.WriteLine(square(5));
+
             IEnumerable<Employee> developers = new Employee[]
             {
                 new Employee { Id = 1, Name = "Scott" },
