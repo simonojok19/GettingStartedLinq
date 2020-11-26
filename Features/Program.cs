@@ -9,7 +9,11 @@ namespace Features
         static void Main(string[] args)
         {
             Func<int, int> square = x => x * x;
-            Console.WriteLine(square(5));
+            Func<int, int, int> print = (int x, int y) =>
+            {
+                return x + y;
+            };
+            Action<int> write = x => Console.WriteLine(x);
 
             IEnumerable<Employee> developers = new Employee[]
             {
