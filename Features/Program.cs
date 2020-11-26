@@ -20,9 +20,7 @@ namespace Features
                 new Employee { Id = 3, Name = "Alex" }
             };
 
-            foreach(var employee in developers.Where(delegate(Employee employee){
-                return employee.Name.StartsWith("S");
-            }))
+            foreach(var employee in developers.Where(employee => employee.Name.StartsWith("S")))
             {
                 Console.WriteLine(employee.Name);
             }
