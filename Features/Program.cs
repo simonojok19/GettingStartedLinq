@@ -24,7 +24,12 @@ namespace Features
             var query = developers.Where(e => e.Name.Length == 5).OrderBy(e =>
             e.Name);
 
-            foreach (var employee in query )
+            var query2 = from dev in developers
+                         where dev.Name.Length == 5
+                         orderby dev.Name
+                         select dev;
+
+            foreach (var employee in query2 )
             {
                 Console.WriteLine(employee.Name);
             }
