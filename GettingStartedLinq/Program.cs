@@ -19,9 +19,10 @@ namespace GettingStartedLinq
             FileInfo[] files = directory.GetFiles();
 
             Array.Sort(files, new FileInfoComparer());
-            foreach(FileInfo file in files)
+            for(int i = 0; i < 5; i++)
             {
-                Console.WriteLine($"{file.Name} : {file.Length}");
+                FileInfo file = files[i];
+                Console.WriteLine($"{file.Name, -20} : {file.Length, 10:N0}");
             }
         }
 
