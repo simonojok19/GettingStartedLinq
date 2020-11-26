@@ -21,8 +21,9 @@ namespace Features
                 new Employee { Id = 3, Name = "Alex" }
             };
 
-            var query = developers.Where(e => e.Name.Length == 5).OrderBy(e =>
-            e.Name);
+            var query = developers.Where(e => e.Name.Length == 5)
+                .OrderBy(e =>e.Name)
+                .Select(e => e);
 
             var query2 = from dev in developers
                          where dev.Name.Length == 5
