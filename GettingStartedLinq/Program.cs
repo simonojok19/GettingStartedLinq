@@ -22,7 +22,7 @@ namespace GettingStartedLinq
                         orderby file.Length descending
                         select file;
 
-            foreach(var file in query)
+            foreach(var file in query.Take(5))
             {
                 Console.WriteLine($"{file.Name,-20} : {file.Length,10:N0}");
             }
