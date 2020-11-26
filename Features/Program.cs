@@ -8,13 +8,7 @@ namespace Features
     {
         static void Main(string[] args)
         {
-            Func<int, int> square = x => x * x;
-            Func<int, int, int> print = (int x, int y) =>
-            {
-                return x + y;
-            };
-            Action<int> write = x => Console.WriteLine(x);
-
+            
             IEnumerable<Employee> developers = new Employee[]
             {
                 new Employee { Id = 1, Name = "Scott" },
@@ -27,7 +21,8 @@ namespace Features
                 new Employee { Id = 3, Name = "Alex" }
             };
 
-            foreach(var employee in developers.Where(employee => employee.Name.StartsWith("S")))
+            foreach(var employee in developers.Where(e => e.Name.Length == 5).OrderBy(e => 
+            e.Name))
             {
                 Console.WriteLine(employee.Name);
             }
