@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Cars
 {
@@ -6,7 +9,15 @@ namespace Cars
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var cars = ProcessFile("fuel.csv");
+        }
+
+        private static List<Car> ProcessFile(string path)
+        {
+            File.ReadAllLines(path)
+                .Skip(1)
+                .Where(line => line.Length > 1)
+
         }
     }
 }
