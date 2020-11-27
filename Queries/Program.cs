@@ -16,11 +16,11 @@ namespace Queries
                 new Movie { Title = "Casablanca", Rating = 8.5f, Year = 1942 }
             };
 
-            var query = movies.Where(m => m.Year > 2000);
+            var query = movies.Filter(m => m.Year > 2000);
 
             foreach(var movie in query)
             {
-                System.Console.WriteLine(movie.Year);
+                Console.WriteLine(movie.Title);
             }
         }
     }
