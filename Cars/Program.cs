@@ -11,7 +11,9 @@ namespace Cars
         {
             var cars = ProcessFile("fuel.csv");
 
-            var query = from car in cars orderby car.Combined ascending, car.Name
+            var query = from car in cars
+                        where car.Manufacturer == "BMW" && car.Year == 2016
+                        orderby car.Combined ascending, car.Name
                         select car;
 
             foreach(var car in query.Take(5))
