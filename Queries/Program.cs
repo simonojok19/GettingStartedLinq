@@ -16,7 +16,7 @@ namespace Queries
                 new Movie { Title = "Casablanca", Rating = 8.5f, Year = 1942 }
             };
 
-            var query = movies.Filter(m => m.Year > 2000).Take(1);
+            var query = movies.Filter(m => m.Year > 2000).ToList();
 
             foreach(var movie in query)
             {
