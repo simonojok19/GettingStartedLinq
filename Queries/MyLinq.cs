@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Queries
 {
-    class MyLinq
+    public static class MyLinq
     {
+        public static IEnumerable<T> Filter<T>(this IEnumerable<T> source)
+        {
+
+        }
     }
 }
